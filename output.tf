@@ -61,3 +61,11 @@ output "ALB_DNS_NAME" {
 output "ALB_LISTENER_ARN" {
   value = aws_alb_listener.ALB_LISTENER.arn
 }
+
+/**
+  * The ARN of the codedeploy group
+  */
+output "DEPLOY_GROUP" {
+    value = "${aws_codedeploy_deployment_group.DEPLOY_GROUP.id}"
+}
+

@@ -94,7 +94,7 @@ variable "INSTANCE_TYPE" {
 variable "ECS_IMAGE_ID" {
   # ami-2017.09.i with ECS Agent 1.17.1-1 and Docker 17.09.1-ce
   default = {
-    eu-west-1 = "ami-0fb2f0b847d44d4f0"
+    eu-west-1 = "ami-023f1074e24ccf964"
   }
 }
 
@@ -121,3 +121,35 @@ variable "SUBNET_IDS" {
 variable "ECS_INSTANCE_PROFILE" {}
 variable "ECS_SERVICE_ROLE" {}
 variable "TASK_EXECUTION_ROLE_ARN" {}
+
+############################## IAM ROLE ##################################
+variable "CODE_DEPLOY_ROLE_ARN" {
+  description = "Role to perform an ECS blue/green deployment"
+}
+
+########################### Cluster informations ##############################
+variable "ECS_CLUSTER_NAME" {
+  description = "Cluster name"
+}
+
+variable "ECS_SERVICE_NAME" {
+  description = "Service name"
+}
+
+########################### Load balancer ##############################
+variable "ALB_LISTENER_ARN" {
+  description = "Load balancer ARN"
+}
+
+variable "ALB_TARGET_GROUP_BLUE_NAME" {
+  description = "Target group 1 name."
+}
+
+variable "ALB_TARGET_GROUP_GREEN_NAME" {
+  description = "Target group 2 name."
+}
+##########################################################################
+
+variable "APP_NAME" {
+  default = "ponyracer"
+}

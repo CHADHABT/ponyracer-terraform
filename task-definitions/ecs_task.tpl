@@ -2,7 +2,7 @@
   {
     "name": "ponyracer",
     "image": "${webapp_docker_image}",
-    "cpu": 10,
+    "cpu": 1,
     "memory": 512,
     "essential": true, 
     "portMappings": [
